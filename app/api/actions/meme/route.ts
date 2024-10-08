@@ -98,9 +98,8 @@ import {
         fields: {
           transaction,
           message: "Post this memo on-chain",
+          type: "transaction", // Add this line with the appropriate value
         },
-        // no additional signers are required for this transaction
-        // signers: [],
       });
   
       return Response.json(payload, {
