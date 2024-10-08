@@ -56,7 +56,7 @@ import {
       let account: PublicKey;
       try {
         account = new PublicKey(body.account);
-      } catch (err) {
+      } catch (error) {
         return new Response('Invalid "account" provided', {
           status: 400,
           headers: ACTIONS_CORS_HEADERS, //Must include CORS HEADERS
@@ -105,10 +105,10 @@ import {
       return Response.json(payload, {
         headers: ACTIONS_CORS_HEADERS,
       });
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
+      console.log(error);
       let message = "An unknown error occurred";
-      if (typeof err == "string") message = err;
+      if (typeof error == "string") message = error;
       return new Response(message, {
         status: 400,
         headers: ACTIONS_CORS_HEADERS, //Must include CORS HEADERS
